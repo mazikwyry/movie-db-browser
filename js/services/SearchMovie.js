@@ -1,4 +1,4 @@
-import MovieDb from './MovieDb.js';
+import MovieDb from '../wrappers/MovieDb.js';
 
 class SearchMovie {
   static findByText(searchQuery = ' ', page = 1) {

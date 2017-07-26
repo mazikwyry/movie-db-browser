@@ -28,11 +28,11 @@ class Paginator {
   }
 
   render(){
-    const { currentPage } = this;
+    const { currentPage, lastPage } = this;
 
     const pagination = document.createElement('DIV');
     pagination.appendChild(this.previousPageButton());
-    pagination.appendChild(document.createTextNode(currentPage));
+    pagination.appendChild(document.createTextNode(`${currentPage}/${lastPage}`));
     pagination.appendChild(this.nextPageButton());
 
     return pagination;

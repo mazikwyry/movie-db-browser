@@ -1,7 +1,7 @@
-import SearchMovie from './SearchMovie.js';
-import SearchForm from './SearchForm.js';
-import MoviesList from './MoviesList.js';
-import Movie from './Movie.js';
+import SearchMovie from './services/SearchMovie.js';
+import SearchForm from './components/SearchForm.js';
+import MoviesList from './components/MoviesList.js';
+import Movie from './components/Movie.js';
 
 
 class App {
