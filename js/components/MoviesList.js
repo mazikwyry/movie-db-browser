@@ -26,13 +26,15 @@ class MoviesList {
 
     this.clear();
     const { movies, movieList, currentPage, lastPage, onPageChange } = this;
-
     const paginator = new Paginator(currentPage, lastPage, onPageChange);
+
     movieList.appendChild(paginator.render());
 
     movies.map((movie) => {
       movieList.appendChild(movie.render());
     })
+
+    movieList.appendChild(paginator.render());
   }
 }
 

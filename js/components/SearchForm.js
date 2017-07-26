@@ -7,6 +7,7 @@ class SearchForm {
     const that = this;
     const form = document.getElementById('form');
     const input = document.createElement("INPUT");
+    input.setAttribute('placeholder', 'Search movies here...');
     const button = document.createElement("BUTTON");
     button.appendChild(document.createTextNode("SEARCH"));
 
