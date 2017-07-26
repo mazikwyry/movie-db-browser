@@ -1,7 +1,6 @@
 import SearchMovie from './SearchMovie.js';
 import SearchForm from './SearchForm.js';
 import MovieList from './MovieList.js';
-import Movie from './Movie.js';
 
 
 class App {
@@ -13,17 +12,13 @@ class App {
   }
 
   onSearch(searchQuery){
-    SearchMovie.findByText(searchQuery).then(json => {
-      const movies = [];
-      json.results.map(movie => {
-        movies.push(new Movie(movie.title, movie.release_date, movie.overview, null));
-      })
+    SearchMovie.findByText(searchQuery).then(movies => {
       this.movieList.refresh(movies);
-    })
+    }).catch(() => alert('Error occured when fetching movies from MovieDB'));
   }
 
   render(){
-    const {seachForm, movieList} = this;
+    const { seachForm, movieList } = this;
 
     seachForm.render();
     movieList.render();
