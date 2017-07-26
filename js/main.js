@@ -19,13 +19,13 @@ class App {
     this.currentSearchQuery = searchQuery;
     SearchMovie.findByText(this.currentSearchQuery)
       .then(this.updateList.bind(this))
-      // .catch(() => alert('Error occured when fetching movies from MovieDB'));
+      .catch(() => alert('Error occured when fetching movies from MovieDB'));
   }
 
   onPageChange(newPage){
     SearchMovie.findByText(this.currentSearchQuery, newPage)
       .then(this.updateList.bind(this))
-      // .catch(() => alert('Error occured when fetching movies from MovieDB'));
+      .catch(() => alert('Error occured when fetching movies from MovieDB'));
   }
 
   updateList(json){

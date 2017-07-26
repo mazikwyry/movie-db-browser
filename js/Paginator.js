@@ -6,31 +6,28 @@ class Paginator {
   }
 
   previousPageButton(){
-    const { onPageChange, currentPage } = this;
-    const previousButton = document.createElement('BUTTON');
-
-    previousButton.appendChild(document.createTextNode('<<'));
-    if (currentPage <= 1) previousButton.setAttribute('disabled', 'true');
-    previousButton.addEventListener("click", function(event){
-      onPageChange(currentPage - 1);
-    })
-    return previousButton;
+    const { currentPage } = this;
+    return this.changePageButton('<<', currentPage <= 1, currentPage - 1);
   }
 
   nextPageButton(){
-    const { onPageChange, currentPage, lastPage } = this;
-    const nextButton = document.createElement('BUTTON');
+    const { currentPage, lastPage } = this;
+    return this.changePageButton('>>', currentPage == lastPage, currentPage + 1);
+  }
 
-    nextButton.appendChild(document.createTextNode('>>'));
-    if (currentPage == lastPage) nextButton.setAttribute('disabled', 'true');
-    nextButton.addEventListener("click", function(event){
-      onPageChange(currentPage + 1);
+  changePageButton(text, disabledCondition, pageOperation){
+    const { onPageChange } = this;
+    const button = document.createElement('BUTTON');
+
+    button.appendChild(document.createTextNode(text));
+    if (disabledCondition) button.setAttribute('disabled', 'true');
+    button.addEventListener("click", function(event){
+      onPageChange(pageOperation);
     })
-    return nextButton;
+    return button;
   }
 
   render(){
-    console.log(this);
     const { currentPage } = this;
 
     const pagination = document.createElement('DIV');
