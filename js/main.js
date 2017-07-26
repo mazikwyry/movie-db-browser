@@ -3,13 +3,32 @@ import SearchForm from './SearchForm.js';
 import MovieList from './MovieList.js';
 import Movie from './Movie.js';
 
-const search = new SearchMovie;
-search.findByText('test').then(results => console.log(results));
+
+class App {
+  constructor() {
+    this.onSearch = this.onSearch.bind(this);
+    this.seachForm = new SearchForm(this.onSearch);
+    this.movieList = new MovieList;
+    this.render();
+  }
+
+  onSearch(searchQuery){
+    SearchMovie.findByText(searchQuery).then(json => {
+      const movies = [];
+      json.results.map(movie => {
+        movies.push(new Movie(movie.title, movie.release_date, movie.overview, null));
+      })
+      this.movieList.refresh(movies);
+    })
+  }
+
+  render(){
+    const {seachForm, movieList} = this;
+
+    seachForm.render();
+    movieList.render();
+  }
+}
 
 
-const searchForm = new SearchForm(value => console.log(value));
-searchForm.render();
-
-const movies = [new Movie('Film', '2014', 'Super film', null)]
-const movieList = new MovieList(movies);
-movieList.render();
+new App;

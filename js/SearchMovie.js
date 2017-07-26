@@ -1,7 +1,7 @@
 import MovieDb from './MovieDb.js';
 
 class SearchMovie {
-  findByText(searchQuery = '', page = 1) {
+  static findByText(searchQuery = '', page = 1) {
     const movies = MovieDb.searchMovie({
       "query": searchQuery,
       "page": page
