@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 const API_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = 'abd0a73367a21a2827c86f7445358c37';
 

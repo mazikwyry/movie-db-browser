@@ -7,7 +7,7 @@ import fetch from 'node-fetch';
 chai.use(chaiAsPromised);
 const expect = chai.expect;
 
-import MovieDb from '../js/wrappers/MovieDb.js';
+import MovieDb from '../../js/wrappers/MovieDb.js';
 
 describe('MovieDb', function(){
   describe('.searchMovie', function(){

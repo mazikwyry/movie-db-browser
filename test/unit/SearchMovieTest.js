@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import SearchMovie from '../js/services/SearchMovie.js';
-import MovieDb from '../js/wrappers/MovieDb.js';
+import SearchMovie from '../../js/services/SearchMovie.js';
+import MovieDb from '../../js/wrappers/MovieDb.js';
 
 describe('SearchMovie', function(){
   let searchMovie;

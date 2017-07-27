@@ -29,6 +29,7 @@
   "dependencies": {
     "babel-register": "^6.24.1",
     "chai-as-promised": "^7.1.1",
+    "nightwatch": "^0.9.16",
     "node-fetch": "^1.7.1",
     "proxyquire": "^1.8.0",
     "sinon": "^2.4.1",
