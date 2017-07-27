@@ -1,10 +1,10 @@
 # MovieDb Browser
 
-Welcome here! My name is Adam. I work for Exlabs as a Full Stack Ruby/JS Developer. Here is my solution to Client Engineer coding challenge #1.
+Welcome here! My name is Adam. I work for Exlabs as a Full Stack Ruby/JS Developer. Here is my solution to Client Engineer coding challenge #1 for Perform.
 
-I want to be honest and it took me far more than 4 hours. The app itself about 5h and another 4h for specs (where most of the time I spent learning). In recent months I was more focused on backend, so had to refresh my memory and learn some new stuff. It is first time when I write JS tests. I have some good expirience with writing specs in Ruby and I hope I was able to show it here. Not many of them though. 100% coverage would take me whole day, so I stick with some unit tests and basic integration one.
+I want to be honest and need to say that it took me far more than 4 hours. The app itself about 5h and another 4h for specs (where most of the time I spent learning). In recent months I was more focused on backend, so had to refresh my memory and learn some new stuff. It is first time when I write JS tests. I have some good expirience with writing specs in Ruby and I hope I was able to show it here. Not many of them though. 100% coverage would take me whole day, so I stick with some unit tests and basic integration one.
 
-I decided not to use suggested library, cos it was not matching my concept, as it required callbacks functions insted of returning results.
+I decided not to use suggested library, cos it was not matching my concept, as it require callbacks functions instead of returning results.
 
 I decided to start without any starter-kit because the kits that I have tried are quite heavy, so everything has been setup from the scratch.
 
