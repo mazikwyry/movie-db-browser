@@ -16,7 +16,7 @@ describe('MovieDb', function(){
     });
 
     context('when no arguments given', function(){
-      it('should throw an error', function(){
+      before(function(){
         fetchMock.get("begin:https://api.themoviedb.org/3/",
           {
             ok: false,
@@ -24,13 +24,15 @@ describe('MovieDb', function(){
          }).catch(unmatchedUrl => {
           return fetch(unmatchedUrl)
         });
+      })
+
+      it('should throw an error', function(){
         expect(MovieDb.searchMovie()).to.be.rejectedWith(Error);
-        fetchMock.restore();
       });
     });
 
     context('when query given in options', function(){
-      it('should return a promise with json response', function(){
+      before(function(){
         fetchMock.get("begin:https://api.themoviedb.org/3/",
           {
             ok: true,
@@ -39,7 +41,9 @@ describe('MovieDb', function(){
         }).catch(unmatchedUrl => {
           return fetch(unmatchedUrl)
         });
+      })
 
+      it('should return a promise with json response', function(){
         return MovieDb.searchMovie({query: 'abc'})
           .then(function(data){
             expect(data.page).to.equal(1);
