@@ -12,7 +12,6 @@ class App {
     this.seachForm = new SearchForm(this.onSearchChange);
     this.movieList = new MoviesList(this.onPageChange);
     this.currentSearchQuery = '';
-    this.render();
   }
 
   onSearchChange(searchQuery){
@@ -45,4 +44,5 @@ class App {
 }
 
 
-new App;
+const app = new App;
+app.render();
